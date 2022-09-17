@@ -14,7 +14,7 @@ export type TodosState = Todo[];
 
 export const todosReducer = createReducer(
   initialState,
-  on(addTodo, (state, todo) => state.concat([todo])),
+  on(addTodo, (state, action) => state.concat([action.todo])),
   on(removeTodo, (state, props) =>
     state.filter((todo) => todo.id !== props.id)
   ),

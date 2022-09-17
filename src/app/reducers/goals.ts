@@ -14,7 +14,7 @@ export const initialState: GoalsState = [];
 
 export const goalsReducer = createReducer(
   initialState,
-  on(addGoal, (state, goal) => state.concat([goal])),
+  on(addGoal, (state, action) => state.concat([action.goal])),
   on(removeGoal, (state, props) => state.filter((goal) => goal.id !== props.id))
 );
 

@@ -1,0 +1,11 @@
+<div>
+  <h1>Todo List</h1>
+  <input type="text" placeholder="Add Todo" #inputRef />
+  <button (click)="addItem()">Add Todo</button>
+
+  <app-list
+    [items]="todos"
+    [remove]="removeItem"
+    [toggle]="toggleItem"
+  ></app-list>
+</div>

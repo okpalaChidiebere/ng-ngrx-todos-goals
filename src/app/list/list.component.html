@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let item of items | async">
+    <span
+      (click)="toggle && toggle(item.id)"
+      [ngStyle]="{ textDecoration: item.complete ? 'line-through' : 'none' }"
+    >
+      {{ item.name }}</span
+    >
+    <button (click)="remove(item)">X</button>
+  </li>
+</ul>

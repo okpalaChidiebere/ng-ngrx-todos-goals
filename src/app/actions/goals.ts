@@ -5,7 +5,9 @@ export type Goal = {
   name: string;
 };
 
-export const addGoal = createAction('[Goal] Add', props<Goal>());
+export const addGoal = createAction('[Goal] Add', (goal: Goal) => ({
+  goal,
+}));
 
 export const removeGoal = createAction(
   '[Goal] Remove',
