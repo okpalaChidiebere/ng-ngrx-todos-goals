@@ -5,6 +5,7 @@ import {
   on,
 } from '@ngrx/store';
 
+import { receiveData } from '../actions/shared';
 import { addTodo, removeTodo, toggleTodo, Todo } from '../actions/todos';
 
 export const TODOS_FEATURE_KEY = 'todos';
@@ -24,7 +25,8 @@ export const todosReducer = createReducer(
         ? todo
         : Object.assign({}, todo, { complete: !todo.complete })
     )
-  )
+  ),
+  on(receiveData, (state, action) => action.todos)
 );
 
 export const selectTodos = createSelector(

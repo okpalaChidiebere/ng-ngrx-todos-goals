@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { SharedEffects } from '../actions/shared';
 
 import { GOALS_FEATURE_KEY, goalsReducer, GoalsState } from './goals';
 import { TODOS_FEATURE_KEY, todosReducer, TodosState } from './todos';
@@ -10,6 +12,7 @@ import { TODOS_FEATURE_KEY, todosReducer, TodosState } from './todos';
     StoreModule.forRoot({}),
     StoreModule.forFeature(GOALS_FEATURE_KEY, goalsReducer),
     StoreModule.forFeature(TODOS_FEATURE_KEY, todosReducer),
+    EffectsModule.forRoot([SharedEffects]),
   ],
 })
 export class AppStore {}
