@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { addGoal, Goal, removeGoal } from '../actions/goals';
+import { Goal, handleAddGoal, handleDeleteGoal } from '../actions/goals';
 
 import { AppState } from '../reducers';
 import { GoalsState, selectGoals } from '../reducers/goals';
@@ -21,12 +21,11 @@ export class GoalsComponent implements OnInit {
 
   addItem() {
     this.store.dispatch(
-      addGoal({
-        id: this.generateID(),
-        name: this.input.nativeElement.value,
-      })
+      handleAddGoal(
+        this.input.nativeElement.value,
+        () => (this.input.nativeElement.value = '')
+      )
     );
-    this.input.nativeElement.value = '';
   }
 
   /**
@@ -35,8 +34,7 @@ export class GoalsComponent implements OnInit {
    * When i made this a closed function dispatch was undefined
    */
   removeItem = (goal: Goal) => {
-    console.log(goal);
-    this.store.dispatch(removeGoal({ id: goal.id }));
+    this.store.dispatch(handleDeleteGoal(goal));
   };
 
   generateID() {
