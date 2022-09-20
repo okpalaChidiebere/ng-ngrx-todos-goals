@@ -16,6 +16,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(sharedActions.initData()); //load initial data for our app
-    this.store.subscribe((store: AppState) => console.log(store)); //NOTE: No need to unsubscribe. Angular does that for us
+    // this.store.subscribe((store: AppState) => console.log(store)); //NOTE: No need to unsubscribe. Angular does that for us
   }
 }
