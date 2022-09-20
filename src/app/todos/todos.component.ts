@@ -37,8 +37,4 @@ export class TodosComponent implements OnInit {
   toggleItem = (id: string) => {
     this.store.dispatch(TodoHandlers.toggleTodo(id));
   };
-
-  generateId() {
-    return (Math.random() + 1).toString(36).substring(7);
-  }
 }

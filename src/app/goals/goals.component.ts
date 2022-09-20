@@ -36,8 +36,4 @@ export class GoalsComponent implements OnInit {
   removeItem = (goal: Goal) => {
     this.store.dispatch(handleDeleteGoal(goal));
   };
-
-  generateID() {
-    return (Math.random() + 1).toString(36).substring(7);
-  }
 }

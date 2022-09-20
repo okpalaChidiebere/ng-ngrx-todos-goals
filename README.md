@@ -1,27 +1,16 @@
 # NgNgrxTodosGoals
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+This project is about learning how to use basic Redux in Angular applications. With the help of [Ngrx](https://ngrx.io/docs) we are able to integrate this very easily into Angular. I know all about Redux in React applications i just wanted to know how to apply thesame concepts in Angular ;)
 
-## Development server
+## This I learned
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Actions:** Learn about creating store actions in Angular. Learn how to create actions [here](https://ngrx.io/guide/store/actions). You can also group actions as well [see](https://ngrx.io/guide/store/action-groups)
+- **Async Actions:** Async actions are handlers that could handle long running task that will eventually be updating your app store like database calls. I angular you make then using [here](https://ngrx.io/guide/effects/operators). I did not explore the Effects [lifecycle](https://ngrx.io/guide/effects/lifecycle) for this app.
+- **Reducers:** Learn about creating store actions in Angular [here](https://ngrx.io/guide/store/reducers). I did not explore [ngrx Entity](https://ngrx.io/guide/entity) which i thinks makes your life easier as well as it creates all the reducers method for a state automatically
+- **Initializing the store:** Learn about creating store actions in Angular [here](https://ngrx.io/guide/store/feature-creators)
+- **MiddleWares:** Middleware are used to intercept actions before they are dispatched. Learn how to [here](https://ngrx.io/guide/store/metareducers)
+- When it comes to using the Store state within a Component, you want to explore [selectors](https://ngrx.io/guide/store/selectors) and [component-store](https://ngrx.io/guide/component-store/initialization)
 
-## Code scaffolding
+## Suel FUl Links
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [How to use services in meta-reducers?](https://stackoverflow.com/questions/58066622/ngrx-how-to-use-services-in-meta-reducers)

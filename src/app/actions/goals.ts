@@ -59,7 +59,7 @@ export class GoalsEffects {
    * This handler performs an optimistic update where we first remove the
    * goal because we don't want the user to wait for the network call that
    * deletes the goal from the DB.
-   * Now if the network call fails, we let the user know and rollback
+   * If the network call fails, we let the user know and rollback
    */
   public readonly handleDeleteGoal$ = createEffect(
     () =>
