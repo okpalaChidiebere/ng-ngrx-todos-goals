@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { addTodo, removeTodo, Todo, toggleTodo } from '../actions/todos';
+import { Todo, TodoHandlers } from '../actions/todos';
 import { AppState } from '../reducers';
 import { selectTodos, TodosState } from '../reducers/todos';
 
@@ -23,21 +23,19 @@ export class TodosComponent implements OnInit {
 
   addItem() {
     this.store.dispatch(
-      addTodo({
-        name: this.input.nativeElement.value,
-        complete: false,
-        id: this.generateId(),
-      })
+      TodoHandlers.addTodo(
+        this.input.nativeElement.value,
+        () => (this.input.nativeElement.value = '')
+      )
     );
-    this.input.nativeElement.value = '';
   }
 
   removeItem = (todo: Todo) => {
-    this.store.dispatch(removeTodo({ id: todo.id }));
+    this.store.dispatch(TodoHandlers.removeTodo(todo));
   };
 
   toggleItem = (id: string) => {
-    this.store.dispatch(toggleTodo({ id }));
+    this.store.dispatch(TodoHandlers.toggleTodo(id));
   };
 
   generateId() {
