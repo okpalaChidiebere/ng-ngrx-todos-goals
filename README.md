@@ -11,6 +11,6 @@ This project is about learning how to use basic Redux in Angular applications. W
 - **MiddleWares:** Middleware are used to intercept actions before they are dispatched. Learn how to [here](https://ngrx.io/guide/store/metareducers)
 - When it comes to using the Store state within a Component, you want to explore [selectors](https://ngrx.io/guide/store/selectors) and [component-store](https://ngrx.io/guide/component-store/initialization)
 
-## Suel FUl Links
+## useful Links
 
 - [How to use services in meta-reducers?](https://stackoverflow.com/questions/58066622/ngrx-how-to-use-services-in-meta-reducers)
